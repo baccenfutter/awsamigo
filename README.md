@@ -69,50 +69,12 @@ Search for all officially supported Ubuntu Xenial AMI images:
 $ awsamigo search ubuntu --image-name ubuntu/images/*16.04*
 {
     "Images": [
-        {
-            "Architecture": "x86_64", 
-            "BlockDeviceMappings": [
-                {
-                    "DeviceName": "/dev/sda1", 
-                    "Ebs": {
-                        "DeleteOnTermination": true, 
-                        "Encrypted": false, 
-                        "SnapshotId": "snap-0e0c726d05e3231cc", 
-                        "VolumeSize": 8, 
-                        "VolumeType": "gp2"
-                    }
-                }, 
-                {
-                    "DeviceName": "/dev/sdb", 
-                    "VirtualName": "ephemeral0"
-                }, 
-                {
-                    "DeviceName": "/dev/sdc", 
-                    "VirtualName": "ephemeral1"
-                }
-            ], 
-            "CreationDate": "2018-03-01T14:32:17.000Z", 
-            "Description": "Canonical, Ubuntu, 16.04 LTS, amd64 xenial image build on 2018-02-28", 
-            "EnaSupport": true, 
-            "Hypervisor": "xen", 
-            "ImageId": "ami-0b541372", 
-            "ImageLocation": "099720109477/ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180228.1", 
-            "ImageType": "machine", 
-            "Name": "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20180228.1", 
-            "OwnerId": "099720109477", 
-            "Public": true, 
-            "RootDeviceName": "/dev/sda1", 
-            "RootDeviceType": "ebs", 
-            "SriovNetSupport": "simple", 
-            "State": "available", 
-            "VirtualizationType": "hvm"
-        },
         [...]
 ```
 
-Get only the `ImageId` of the latest Debian Stretch:
+Get only the `ImageId` of the latest Debian Stretch in us-west-1:
 
 ```bash
-$ awsamigo latest debian --image-name=debian-stretch* --only-id
-ami-34414d4d
+$ awsamigo latest debian --region=us-west-1 --image-name=debian-stretch* --only-id
+ami-a126c2c2
 ``
