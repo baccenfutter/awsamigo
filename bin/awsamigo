@@ -44,6 +44,7 @@ Options:
 
 from docopt import docopt
 
+import sys
 import json
 import awsamigo
 
@@ -52,7 +53,7 @@ arguments = docopt(__doc__, version=awsamigo.__version__)
 
 filters = {}
 if arguments['--image-name']:
-    filters['name'] = [arguments['--image-name'] + '*']
+    filters['name'] = [arguments['--image-name']]
 else:
     filters['name'] = ['*']
 if arguments['--description']:
@@ -72,9 +73,11 @@ if arguments['--state']:
 
 filters = awsamigo.new_filter(filters)
 finder = awsamigo.new_finder(arguments['--region'])
+sys.stderr.write("Calling AWS API, hang tight...\n")
 
 if arguments['search']:
     results = finder.search(arguments['<distro>'], filters)
+    sys.stderr.write("Results: {}\n".format(len(results['Images'])))
 
 elif arguments['latest']:
     only_attr = None
@@ -84,5 +87,8 @@ elif arguments['latest']:
         only_attr = arguments['--only']
 
     results = finder.latest(arguments['<distro>'], filters, only_attr)
+    if isinstance(results, str):
+        print results
+        sys.exit(0)
 
 print(json.dumps(results, indent=4, sort_keys=True))
