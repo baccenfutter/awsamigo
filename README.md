@@ -20,7 +20,9 @@ make install
 ## Usage
 
 ```
-awsamigo - Quickly find the right AWS AMI ID for your instances.
+$ export AWS_ACCESS_KEY_ID=
+$ export AWS_SECRET_ACCESS_KEY=
+$ awsamigo - Quickly find the right AWS AMI ID for your instances.
 
 Usage:
     awsamigo (-h | --help)
