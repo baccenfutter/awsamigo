@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 
-version = "0.1.6"
+version = "0.2.0"
 setup(
     name='awsamigo',
     version=version,
@@ -9,7 +9,7 @@ setup(
     author_email='baccenfutter@c-base.org',
     packages=['awsamigo'],
     url='http://github.com/baccenfutter/awsamigo',
-    license='LICENCE.txt',
+    license='Apache-2.0',
     description="Wrapper for quick & easy AMI lookup via boto3.",
     long_description=open('README.rst').read(),
     keywords='tool development aws ami',
