@@ -49,7 +49,7 @@ Options:
     -h --help                   Show this help and exit
     --version                   Print version and exit
     --region=<region>           AWS region to connect to [default: eu-west-1]
-    --image-name=<name>         Only lookup image-names matchin this pattern [default: ubuntu/images/*16.04]
+    --image-name=<name>         Only lookup image-names matchin this pattern
     --arch=<arch>               Display only images of this architecture [default: x86_64]
     --hypervisor=<hypervisor>   Display only images of this hypervisor [default: xen]
     --virt-type=<virt_type>     Display only images of this virtualization-type [default: hvm]

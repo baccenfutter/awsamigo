@@ -17,7 +17,7 @@ setup(
     url='http://github.com/baccenfutter/awsamigo',
     license='LICENCE.txt',
     description="Wrapper for quick & easy AMI lookup via boto3.",
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     keywords='tool development aws ami',
     python_requires='>=2.7',
     install_requires=[
