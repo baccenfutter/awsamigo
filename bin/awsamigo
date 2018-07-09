@@ -35,7 +35,7 @@ Options:
     --hypervisor=<hypervisor>   Display only images of this hypervisor [default: xen]
     --virt-type=<virt_type>     Display only images of this virtualization-type [default: hvm]
     --device-type=<device_type> Display only images with this root-device type [default: ebs]
-    --image-type=<image_type>   Display only images of this machine-type [default: machine]
+    --image-type=<image_type>   Display only images of this image-type [default: machine]
     --state=<state>             Display only images in this state [default: available]
     --description=<description> Display only images with this description
     --only-id                   Display only the image-id
@@ -60,7 +60,7 @@ if arguments['--description']:
 if arguments['--arch']:
     filters['architecture'] = arguments['--arch'].split(',')
 if arguments['--image-type']:
-    filters['image_type'] = arguments['--image-type'].split(',')
+    filters['image-type'] = arguments['--image-type'].split(',')
 if arguments['--hypervisor']:
     filters['hypervisor'] = arguments['--hypervisor'].split(',')
 if arguments['--virt-type']:
