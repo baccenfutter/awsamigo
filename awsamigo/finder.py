@@ -14,7 +14,7 @@ class Finder(object):
         """
         A finder is capable of performing boto3 API calls to receive a list of
         existing AMIs. The results are cached, for better performance on
-        subsequent calles.
+        subsequent calls.
 
         :param region:  str     - The AWS region to connect to.
         """

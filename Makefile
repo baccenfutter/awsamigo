@@ -33,7 +33,7 @@ build:
 	python setup.py sdist
 
 distribute: clean build
-	if [[ -z $(PYPI_REPO) ]]; then echo "PYPI_REPO is not defined!"; fi"
+	if [[ -z $(PYPI_REPO) ]]; then echo "PYPI_REPO is not defined!"; fi
 	$(TWINE) upload dist/* $(TWINE_OPTS)
 
 clean:

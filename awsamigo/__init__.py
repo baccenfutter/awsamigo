@@ -6,7 +6,7 @@ from . import const
 from . import finder
 
 __authors__ = ["Brian Wiborg <baccenfutter@c-base.org>"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 def new_filter(filters=None):
     """
