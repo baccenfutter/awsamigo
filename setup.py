@@ -1,19 +1,13 @@
 from distutils.core import setup
 
-import awsamigo
 
-version = awsamigo.__version__
-author = awsamigo.__authors__[0].split('<')[0].strip()
-author_email = awsamigo.__authors__[0].split('<')[1].strip()[:-1]
-
+version = "0.1.4"
 setup(
     name='awsamigo',
     version=version,
-    author=author,
-    author_email=author_email,
-    packages=[
-        'awsamigo',
-    ],
+    author='Brian Wiborg',
+    author_email='baccenfutter@c-base.org',
+    packages=['awsamigo'],
     url='http://github.com/baccenfutter/awsamigo',
     license='LICENCE.txt',
     description="Wrapper for quick & easy AMI lookup via boto3.",
@@ -24,6 +18,11 @@ setup(
         "boto3==1.7.52",
         "docopt==0.6.2",
     ],
+    extras_require={
+        'dev': [
+            "twine==1.11.0",
+        ],
+    },
     scripts=[
         'bin/awsamigo',
     ],

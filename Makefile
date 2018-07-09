@@ -24,7 +24,7 @@ help:
 	@echo
 
 install:
-	pip install -e .
+	pip install -e .[dev]
 
 uninstall:
 	pip uninstall -y blunix_toolkit

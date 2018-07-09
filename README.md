@@ -14,7 +14,7 @@ mkvirtualenv awsamigo  # perhaps: `apt install virtualenvwrapper`, first
 git clone https://github.com/baccenfutter/awsamigo
 cd awsamigo
 setvirtualenvproject
-pip install -e .
+make install
 ```
 
 ## Usage

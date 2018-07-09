@@ -2,11 +2,14 @@
 Wrapper for quich & easy AMI lookup via boto3.
 """
 
-from . import const
-from . import finder
+import os
 
-__authors__ = ["Brian Wiborg <baccenfutter@c-base.org>"]
-__version__ = "0.1.3"
+from pkg_resources import get_distribution
+
+from . import const, finder
+
+__version__ = get_distribution('awsamigo').version
+
 
 def new_filter(filters=None):
     """
