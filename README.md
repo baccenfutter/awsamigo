@@ -61,7 +61,7 @@ Options:
     --only=<only>               Display only the given attribute of the found image(s)
 ```
 
-### Example
+## Examples
 
 Search for all officially supported Ubuntu Xenial AMI images:
 
