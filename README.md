@@ -22,7 +22,9 @@ make install
 ```
 $ export AWS_ACCESS_KEY_ID=
 $ export AWS_SECRET_ACCESS_KEY=
-$ awsamigo - Quickly find the right AWS AMI ID for your instances.
+$ awsamigo -h
+
+awsamigo - Quickly find the right AWS AMI ID for your instances.
 
 Usage:
     awsamigo (-h | --help)
@@ -71,12 +73,22 @@ Search for all officially supported Ubuntu Xenial AMI images:
 $ awsamigo search ubuntu --image-name ubuntu/images/*16.04*
 {
     "Images": [
-        [...]
+[...]
+[...]
+[...]
 ```
 
 Get only the `ImageId` of the latest Debian Stretch in us-west-1:
 
 ```bash
-$ awsamigo latest debian --region=us-west-1 --image-name=debian-stretch* --only-id
+$ awsamigo latest debian \
+    --region=us-west-1 \
+    --image-name=debian-stretch* \
+    --only-id
 ami-a126c2c2
-``
+```
+
+Search for all Foobar AMI images inside any specific AWS account.
+```bash
+$ awsamigo search $YOUR_AWS_ACCOUNT_ID --image-name=foobar*
+```
