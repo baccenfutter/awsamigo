@@ -36,6 +36,20 @@ distribute: clean build
 	if [[ -z $(PYPI_REPO) ]]; then echo "PYPI_REPO is not defined!"; fi
 	$(TWINE) upload dist/* $(TWINE_OPTS)
 
+release:
+	@git status
+	@echo
+	@echo "Current version is: $(shell git describe)"
+	@read -p "What's the new version? " new_version; \
+		if [[ -n "$$new_version" ]]; then \
+			git tag -s -a "$$new_version"; \
+			if [[ $$? -eq 0 ]]; then \
+				echo git push && \
+				echo git push --tags && \
+				echo PYPI_REPO=baccenfutter $(MAKE) clean build distribute; \
+			fi; \
+		fi
+
 clean:
 	rm -rf *.egg-info
 	rm -rf build/ dist/ MANIFEST
